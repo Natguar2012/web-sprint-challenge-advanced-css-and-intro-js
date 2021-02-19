@@ -135,14 +135,13 @@ button:hover{
     width:100%;
 }
 
+/*media queries*/
+
 @media (max-width:500px){
     .artists-container{
-        justify-content: center;
+        justify-content: space-evenly;
         flex-direction: column;
+        align-content: center;
         align-items: center;
-        width: 100%;
-    }
-    .artist{
-        width:62.5%;
-    }
+    }   
 }
