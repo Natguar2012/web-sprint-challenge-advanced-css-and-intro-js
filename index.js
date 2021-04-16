@@ -208,21 +208,17 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-let last = artists.artists. -1
-console.log(last);
+// console.log(artists[0].bio);
 
 //(2) Bio of the third artist (2nd index) in the array 
 //"Diego María de la Concepción Juan Nepomuceno Estanislao de la Rivera y Barrientos Acosta y Rodríguez, known as Diego Rivera (Spanish pronunciation: [ˈdjeɣo riˈβeɾa]; December 8, 1886 – November 24, 1957) was a prominent Mexican painter. His large frescoes helped establish the Mexican mural movement in Mexican art. Between 1922 and 1953, Rivera painted murals in, among other places, Mexico City, Chapingo, Cuernavaca, San Francisco, Detroit, and New York City. In 1931, a retrospective exhibition of his works was held at the Museum of Modern Art in New York. Rivera had a volatile marriage with fellow Mexican artist Frida Kahlo."
 
-console.log(this.bio)
+console.log(artists[2].bio)
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
-(no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-objIndex = artists.findIndex((obj => obj.id == 8));
-let newArray = [...artists]
-console.log("Before update: ", artists[8])
-myArray[8].name = "Vincent Van Gogh"
-console.log("After update: ", myArray[8])
+
+console.log(artists[8].name.splice(8,8, 'Vincent Van Gogh'));
 
 
 
@@ -236,9 +232,15 @@ Use getArtistByIndex to do the following:
 
 Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-/*Your Code Here*/
-}  
+function getArtistByIndex(array, index) {
+  let object = {
+    id: 0,
+    name: "Amedeo Modigliani"
+  }
+  return `the artist at index ${array[index].id} is ${array[index].name}`
+}
+
+console.log(getArtistByIndex(artists, 0));
 
 
 
@@ -249,10 +251,15 @@ Use get20s to do the following:
 
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
+let newArray= [];
 
-function get20s(/*Your Code Here*/){
-/*Your Code Here*/
+function get20s(array){
+ for(let i=0; i < artists.length; i++){
+ if(artists[i].year > "1900" && artist[i].year < "1925")
+ return console.log(get20s(artists));
 }
+
+
 
 
 
@@ -265,10 +272,10 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/){
+function removeArtist(){
  /*Your Code Here*/
 }
- 
+//probably need the slice method here
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -300,7 +307,7 @@ Use lotsOfArt to do the following:
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
 function lotsOfArt(/*Your Code Here*/){
-/*Your Code Here*/
+/*Your Code Here*/  
 }
 
 
@@ -364,4 +371,5 @@ get20s,
 removeArtist,
 addArtist,
 lotsOfArt
+}
 }

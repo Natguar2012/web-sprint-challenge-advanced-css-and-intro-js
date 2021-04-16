@@ -135,13 +135,42 @@ button:hover{
     width:100%;
 }
 
-/*media queries*/
+@media (max-width: 500px) {
+    *{
+        max-width: 100%;
+        text-decoration: none;
+    }
+    body{
+        display: inline;
+        width:100%;
+    }
 
-@media (max-width:500px){
-    .artists-container{
-        justify-content: space-evenly;
+    nav{
+        display: flex;
         flex-direction: column;
-        align-content: center;
         align-items: center;
-    }   
+    }
+
+    nav span{
+        border-left:none;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .artists-container{
+        display:flex;
+        flex-direction: column;
+        margin:0 auto;
+    }
+    
+    .artist{
+        width:100%;
+        text-align:center;
+    }
+    .artist img{
+        width:100%;
+    }
+
 }
